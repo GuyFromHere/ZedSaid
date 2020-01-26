@@ -2,32 +2,26 @@ const express = require("express");
 const router = express.Router();
 const zed = require('../models/zed');
 
-// call selectAll function via burger model
+// call selectAll function via zed model
 router.get("/", (req, res) => {
     zed.all((data) => {
         const newObj = {
             zed: data
         }
-        console.log(newObj);
         res.render("index", newObj);
     });
-
-    /*     burger.all((data) => {
-            var newObj = {
-                burger: data
-            };
-            res.render("index", newObj);
-        }); */
 });
 
-// call insertOne function via burger model
-router.post("/api/burgers", (req, res) => {
-    /*  burger.create(req.body.name, result => {
-         const newObj = {
-             burger_name: req.body.name
-         };
-         res.json({ id: result.insertId });
-     }); */
+// call addNew function via model
+router.post("/api/add_quote", (req, res) => {
+    zed.add([req.body.age, req.body.quote, req.body.context], result => {
+        const newObj = {
+            age: req.body.age,
+            quote: req.body.quote,
+            context: req.body.context
+        };
+        res.json({ id: result.insertId });
+    });
 });
 
 // call updateOne function via burger model 

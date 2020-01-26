@@ -6,11 +6,11 @@ const zed = {
             cb(res);
         })
     },
-    /* create: (data, cb) => {
-        orm.insertOne(data, (res) => {
+    add: (data, cb) => {
+        orm.addQuote(data, (res) => {
             cb(res);
         });
-    },
+    }/*,
     update: (devourState, id, cb) => {
         // pass devourState from browser > controller > model and finally to orm
         orm.updateOne(devourState, id, (res) => {

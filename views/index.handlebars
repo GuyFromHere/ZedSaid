@@ -1,6 +1,27 @@
-<div>
-    <h1>This is the page.</h1>
-    {{#each zed}}
-    {{quote}}<br>
-    {{/each}}
-</div>
+<h1>This is the page.</h1>
+<table>
+    <thead>
+        <th>Age</th>
+        <th>Quote</th>
+        <th>Context</th>
+    </thead>
+    <tbody>
+        {{#each zed}}
+        <tr>
+            <td>{{age}}</td>
+            <td>{{quote}}</td>
+            <td>{{context}}</td>
+        </tr>
+        {{/each}}
+        <form id="addForm">
+            <tr>
+                <td><input id="newAge" type="text"></td>
+                <td><input id="newQuote" type="text"></td>
+                <td><input id="newContext" type="text"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Add Quote</button></td>
+            </tr>
+        </form>
+    </tbody>
+</table>
