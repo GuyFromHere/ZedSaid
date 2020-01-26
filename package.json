@@ -1,0 +1,26 @@
+{
+  "name": "zedsaid",
+  "version": "1.0.0",
+  "description": "A place to keep track of the ridiculous things my daughter says to me.",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuyFromHere/ZedSaid.git"
+  },
+  "author": "Dan Dismuke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuyFromHere/ZedSaid/issues"
+  },
+  "homepage": "https://github.com/GuyFromHere/ZedSaid#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2"
+  }
+}
