@@ -3,8 +3,20 @@ const router = express.Router();
 const zed = require('../models/zed');
 
 // call selectAll function via zed model
+router.get("/edit", (req, res) => {
+    zed.edit((data) => {
+        const newObj = {
+            zed: data,
+            editMode: true
+        }
+        res.render("index", newObj);
+    });
+});
+
 router.get("/", (req, res) => {
-    zed.all((data) => {
+    zed.rand((data) => {
+        console.log(data)
+        // get a random quote
         const newObj = {
             zed: data
         }

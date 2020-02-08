@@ -1,8 +1,13 @@
 const orm = require('../config/orm');
 
 const zed = {
-    all: (cb) => {
+    edit: (cb) => {
         orm.selectAll((res) => {
+            cb(res);
+        })
+    },
+    rand: (cb) => {
+        orm.selectRandom((res) => {
             cb(res);
         })
     },
