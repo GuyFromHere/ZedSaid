@@ -1,4 +1,4 @@
-delete database if exists zedsaid_db;
+drop database if exists zedsaid_db;
 create database zedsaid_db;
 use zedsaid_db;
 

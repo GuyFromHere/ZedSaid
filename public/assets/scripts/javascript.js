@@ -1,7 +1,13 @@
 
 $(function () {
+
+    $('#next').on("click", (e) => {
+        $.get('/', (data) => {
+            location.reload();
+        })
+    })
+
     $('#addForm').on("submit", (e) => {
-        // do something
         const age = $('#newAge').val();
         const quote = $('#newQuote').val();
         const context = $('#newContext').val();
@@ -16,7 +22,6 @@ $(function () {
             type: "POST",
             data: newQuote
         }).then(() => {
-            console.log(newQuote);
             location.reload();
         })
     })

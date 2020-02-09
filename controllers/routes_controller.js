@@ -15,7 +15,6 @@ router.get("/edit", (req, res) => {
 
 router.get("/", (req, res) => {
     zed.rand((data) => {
-        console.log(data)
         // get a random quote
         const newObj = {
             zed: data

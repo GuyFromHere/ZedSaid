@@ -1,0 +1,13 @@
+span {
+    font-size: 40pt;
+}
+
+#quote {
+    font-family: 'Parisienne', cursive;
+}
+
+#next:hover {
+    padding: 5px;
+    margin: 5px;
+    box-shadow: lightgray 1px 1px 3px 3px;
+}
