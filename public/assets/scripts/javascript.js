@@ -26,9 +26,8 @@ $(function() {
 
 	getQuote = function() {
 		$.get("/", data => {
-			location.reload();
+			location.href = "/";
 		});
 	};
-
-	setInterval(getQuote, 3000);
+	setInterval(getQuote, 5500);
 });

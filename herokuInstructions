@@ -35,10 +35,5 @@ heroku ps:restart web.1
 
 (See https://devcenter.heroku.com/articles/dynos for more CLI commands)
 
-
-errno: 'ECONNREFUSED',
-code: 'ECONNREFUSED',
-syscall: 'connect',
-address: '127.0.0.1',
-port: 3306,
-fatal: true
+Troubleshooting:
+Try running the app locally with the heroku database connection to verify that the DB is set up correctly. 
