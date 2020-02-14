@@ -11,9 +11,9 @@ const mysql = require("mysql");
 
 // Heroku / ClearDb:
 const connection = mysql.createConnection({
-	username: "bd541b76d1cb87",
+	user: "bd541b76d1cb87",
 	password: "86e2719f",
-	host: "127.0.0.1",
+	host: "us-cdbr-iron-east-04.cleardb.net",
 	database: "heroku_3a8a7d70d740947"
 });
 connection.connect(err => {
