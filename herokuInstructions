@@ -1,0 +1,27 @@
+Name:
+shielded-plains-71844.herokuapp.com
+
+Push to heroku:
+git push heroku master
+
+Deploy with DB:
+1. Create clearDB database:
+heroku addons:create cleardb:ignite
+
+2. Get database URL:
+heroku config | grep CLEARDB_DATABASE_URL
+Copy from mysql://...
+
+5. Set database:
+heroku config:set DATABASE_URL='mysql://bd541b76d1cb87:86e2719f@us-cdbr-iron-east-04.cleardb.net/heroku_3a8a7d70d740947?reconnect=true'
+
+6. Update config info in repo to connect to heroku db:
+
+const connection = mysql.createConnection({
+    username: "bd541b76d1cb87",
+    password: "86e2719f",
+    host: "us-cdbr-iron-east-04.cleardb.net",
+    database: "heroku_3a8a7d70d740947"
+});
+
+7. Create connection to remote db in mysql and supply schema / seed data...

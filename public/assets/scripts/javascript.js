@@ -1,31 +1,34 @@
+$(function() {
+	$("#next").on("click", e => {
+		$.get("/", data => {
+			location.reload();
+		});
+	});
 
-$(function () {
+	$("#addForm").on("submit", e => {
+		const age = $("#newAge").val();
+		const quote = $("#newQuote").val();
+		const context = $("#newContext").val();
 
-    $('#next').on("click", (e) => {
-        $.get('/', (data) => {
-            location.reload();
-        })
-    })
+		const newQuote = {
+			age: $("#newAge").val(),
+			quote: $("#newQuote").val(),
+			context: $("#newContext").val()
+		};
 
-    $('#addForm').on("submit", (e) => {
-        const age = $('#newAge').val();
-        const quote = $('#newQuote').val();
-        const context = $('#newContext').val();
+		$.ajax("/api/add_quote", {
+			type: "POST",
+			data: newQuote
+		}).then(() => {
+			location.reload();
+		});
+	});
 
-        const newQuote = {
-            age: $('#newAge').val(),
-            quote: $('#newQuote').val(),
-            context: $('#newContext').val()
-        };
+	getQuote = function() {
+		$.get("/", data => {
+			location.reload();
+		});
+	};
 
-        $.ajax('/api/add_quote', {
-            type: "POST",
-            data: newQuote
-        }).then(() => {
-            location.reload();
-        })
-    })
-
-
-
-})
+	setInterval(getQuote, 3000);
+});
