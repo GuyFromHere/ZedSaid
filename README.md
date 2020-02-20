@@ -1,5 +1,5 @@
 # ZedSaid
-A place to keep track of the ridiculous things my daughter says to me. Check it out [here!](https://shielded-plains-71844.herokuapp.com/)
+A place to keep track of the ridiculous things my daughter says to me. Check it out [here!](https://zedsaid.herokuapp.com/)
 
 # How it works:
 
