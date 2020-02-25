@@ -1,20 +1,12 @@
 # ZedSaid
-A place to keep track of the ridiculous things my daughter says to me. Check it out [here!](https://zedsaid.herokuapp.com/)
+A simple web page to help me keep track of the ridiculous things my daughter says to me. She's been teasing me like this for as long as she could speak. I wish I had started this sooner because I've forgotten so many of them already.
 
-# How it works:
+Check it out [here!](https://guyfromhere.github.io/ZedSaid/)
 
-1. DOM
+![She said this when we were snuggling in bed. She was two at the time. It's been downhill ever since.](/images/grocery.png)
 
-User accesses html through the DOM. jQuery from the javascript.js include sends request data to the controller.
+![I get this one a lot for various reasons](/images/idiot.png)
 
-2. CONTROLLER
+# Concept
 
-Routes pass through the controller, which uses functions defined in the zed.js model....
-
-3. MODEL
-
-The model is where database functions run. Those functions are pulled in from the ORM.
-
-4. ORM
-
-The ORM is where all the queries are stored. The request from the DOM trickles down to ORM functions which query the DB and send the results back to the controller and on to the DOM.
+This started as a database app deployed to Heroku but the page kept crashing so I ported it back to static HTML.
