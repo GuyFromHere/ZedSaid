@@ -13,32 +13,27 @@ const quotes = [
 
 $(function() {
 
-	getQuote = function(quote) {
-		/* $.get("/", data => {
-			location.href = "/";
-		}); */	
-	};
-
-	function intervalForEach (array, iteratee, delay) {
-		let current = 0
+	// wrap the quote display function in a timeout loop
+	const intervalLooper = function (array, looper, delay) {
+		let index = 0
 		let interval = setInterval(() => {
-		if (current === array.length) {
-			current = 0;
+		// start over when it reaches the last index
+		if (index === array.length) {
+			index = 0;
 		} else {
-			iteratee(array[current])
-			current++
+			looper(array[index])
+			index++
 		}
 		}, delay)
 	}
 	
-	// this will be applied to each item in the array
-	function updateQuote (quote) {
+	// show next quote on a separate timeout
+	const updateQuote = function (quote) {
 		setTimeout(() => {
-			console.log(quote)
 			$('#quote').html(quote);
 		}, 100) 
 	}
 
-	intervalForEach(quotes, updateQuote, 6000);
+	intervalLooper(quotes, updateQuote, 6000);
 	
 });
